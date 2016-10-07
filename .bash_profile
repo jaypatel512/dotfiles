@@ -3,6 +3,7 @@ export PATH="$HOME/bin:$PATH";
 
 # Init jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+export JAVA_HOME="$(jenv javahome)"
 
 #git bash autocomplete
 GIT_PS1_SHOWDIRTYSTATE=true
