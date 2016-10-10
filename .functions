@@ -102,6 +102,15 @@ function phpserver() {
 	php -S "${ip}:${port}";
 }
 
+# Does a regex on cd
+function cdd() {
+	local location="$@";
+	local endlocation=${location##*/}
+	local startlocation=${location%/*}
+	cd "$startlocation"
+	cd *$endlocation*
+}
+
 # Compare original and gzipped file size
 function gz() {
 	local origsize=$(wc -c < "$1");
