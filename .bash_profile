@@ -5,6 +5,10 @@ export PATH="$HOME/bin:$PATH";
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 export JAVA_HOME="$(jenv javahome)"
 
+# Init rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 #git bash autocomplete
 GIT_PS1_SHOWDIRTYSTATE=true
 . `brew --prefix git`/etc/bash_completion.d/git-prompt.sh
