@@ -107,8 +107,11 @@ function cdd() {
 	local location="$@";
 	local endlocation=${location##*/}
 	local startlocation=${location%/*}
-	cd "$startlocation"
-	cd *$endlocation*
+	if [[ "$startlocation" == "$endlocation" ]]; then
+		cd *$endlocation*;
+	else
+		cd "$startlocation/"*$endlocation*;
+	fi
 }
 
 # Compare original and gzipped file size
